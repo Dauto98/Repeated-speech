@@ -1,0 +1,26 @@
+.addSpeechContainer {
+	min-height: 60px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding-left: 20px;
+}
+
+.openButton {
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.newSpeechInput {
+	width: 400px;
+	border-radius: 10px;
+	border-color: transparent;
+	color: hsla(0,0%,100%,.6);
+	background-color: rgba(36,39,43,.2);
+	border-color: rgba(0,0,0,.3);
+	display: none;
+}
+
+.showInput {
+	display: block;
+}

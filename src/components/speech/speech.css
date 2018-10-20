@@ -1,0 +1,51 @@
+.speechItem {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	min-height: 80px;
+	background-color: #32373c;
+	border-bottom: 1px solid hsla(0,0%,100%,.2)
+}
+
+.item_status {
+	flex-grow: 0.7;
+	width: 0;
+	text-align: center;
+}
+
+.item_status input {
+	cursor: pointer;
+}
+
+.item_text {
+	flex-grow: 4;
+	width: 0;
+	color: hsla(0,0%,100%,.6);
+}
+
+.item_start_delay, .item_interval, .item_speed, .item_volume, .item_delete {
+	width: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-grow: 1;
+  color: hsla(0,0%,100%,.6);
+}
+
+.item_start_delay input, .item_interval input, .item_speed input, .item_volume input {
+	width: 70px;
+	border-radius: 10px;
+	border-color: transparent;
+	text-align: center;
+	color: hsla(0,0%,100%,.6);
+  background-color: rgba(36,39,43,.2);
+  border-color: rgba(0,0,0,.3);
+}
+
+.item_delete {
+	flex-grow: 0.8;
+}
+
+.item_delete_button {
+	cursor: pointer;
+}

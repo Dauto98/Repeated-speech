@@ -1,0 +1,57 @@
+{
+  "name": "Repeated-speech",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Nguyen Duc Anh"
+  },
+  "repository": {
+    "url": ""
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^1.0.0",
+    "electron": "^3.0.4",
+    "electron-builder": "^20.28.4",
+    "electron-reload": "^1.2.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "webpack": "^4.21.0",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "normalize.css": "^8.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "simpletts": "^2.3.0"
+  },
+  "build": {
+    "files" : [
+      "!src/",
+      "!.babelrc",
+      "!webpack.config.js"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    }
+  }
+}
