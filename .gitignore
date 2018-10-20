@@ -14,3 +14,5 @@ dist/
 .DS_STORE
 .idea
 *.iml
+
+window-dist/
