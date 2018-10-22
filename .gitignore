@@ -6,6 +6,7 @@ node_modules/
 
 # webpack's output directory
 dist/
+build/
 
 # dotenv environment variables file
 .env
