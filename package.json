@@ -38,7 +38,13 @@
     "simpletts": "^2.3.0"
   },
   "build": {
+    "asarUnpack" : "simpletts/",
     "files" : [
+      {
+        "from" : ".",
+        "to" : ".",
+        "filter" : ["build/"]
+      },
       "!src/",
       "!.babelrc",
       "!webpack.config.js"

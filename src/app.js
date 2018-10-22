@@ -40,9 +40,9 @@ class App extends React.Component {
 			this.state.data.forEach(speech => {
 				if (speech.enabled) {
 					speechStartDelayList.push(setTimeout(() => {
-						tts.read({text : speech.text, voice : {gender: "male", name: "english"}, speed : speech.speed, volume: speech.volume}).then(res => console.log(res)).catch(err => console.log(err));
+						tts.read({text : speech.text, speed : speech.speed, volume: speech.volume}).then(res => console.log(res)).catch(err => console.log(err));
 						speechIntervalList.push(setInterval(() => {
-							tts.read({text : speech.text, voice : {gender: "male", name: "english"}, speed : speech.speed, volume: speech.volume}).then(res => console.log(res)).catch(err => console.log(err));
+							tts.read({text : speech.text, speed : speech.speed, volume: speech.volume}).then(res => console.log(res)).catch(err => console.log(err));
 						}, speech.interval));
 					}, speech.startDelay));
 				}

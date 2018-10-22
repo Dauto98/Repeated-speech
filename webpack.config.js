@@ -16,6 +16,9 @@ module.exports = {
     path : path.resolve(__dirname, "build"), // where to put those files
     publicPath : "" // the address seen from the web URL, after the domain
   },
+	node: {
+		__dirname: false
+	},
   devtool: "cheap-source-map",
 	module : {
     rules : [

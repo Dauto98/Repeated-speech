@@ -21,8 +21,10 @@
 	const IS_WINDOWS = "win32" === require("os").platform().trim().toLowerCase();
 	const CSCRIPT_ARGS = [ "//NoLogo", "//B" ];
 
-	const LISTVOICES = join(__dirname, "..", "batchs", "listvoices.vbs");
-	const PLAYTEXT = join(__dirname, "..", "batchs", "playtext.vbs");
+	// const LISTVOICES = join(__dirname, "..", "batchs", "listvoices.vbs");
+	const LISTVOICES = join(__dirname, "..", "..", "app.asar.unpacked", "simpletts", "batchs", "listvoices.vbs");
+	// const PLAYTEXT = join(__dirname, "..", "batchs", "playtext.vbs");
+	const PLAYTEXT = join(__dirname, "..", "..", "app.asar.unpacked", "simpletts", "batchs", "playtext.vbs");
 
 // module
 
