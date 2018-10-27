@@ -44,9 +44,13 @@ class App extends React.Component {
 		tts.read(ttsObject).then(res => console.log(res)).catch(err => console.log(err));
 		let ttsNoti = new Notification('Repeated-speech', {
 			body: ttsObject.text,
-			tag: "repeated-speech-noti"
+			// tag: "repeated-speech-noti"
 		});
-		setTimeout(() => ttsNoti.close(), 2500);
+		setTimeout(() => {
+			if (ttsNoti) {
+				ttsNoti.close();
+			}
+		}, 1250);
 	}
 
 	playButtonClicked = () => {
