@@ -19,6 +19,12 @@ class App extends React.Component {
 		this.state.data = JSON.parse(localStorage.getItem("speechData") || "[]");
 	}
 
+	componentDidMount() {
+		Notification.requestPermission().then(function(result) {
+		  console.log(result);
+		});
+	}
+
 	componentWillUnmount() {
 		this.clearAudio();
 	}
@@ -34,15 +40,24 @@ class App extends React.Component {
 		speechIntervalList = [];
 	}
 
+	playSoundAndDisplayNoti = (ttsObject) => {
+		tts.read(ttsObject).then(res => console.log(res)).catch(err => console.log(err));
+		let ttsNoti = new Notification('Repeated-speech', {
+			body: ttsObject.text,
+			tag: "repeated-speech-noti"
+		});
+		setTimeout(() => ttsNoti.close(), 2500);
+	}
+
 	playButtonClicked = () => {
 		this.clearAudio();
 		if (!this.state.isPlaying) {
 			this.state.data.forEach(speech => {
 				if (speech.enabled) {
 					speechStartDelayList.push(setTimeout(() => {
-						tts.read({text : speech.text, speed : speech.speed, volume: speech.volume}).then(res => console.log(res)).catch(err => console.log(err));
+						this.playSoundAndDisplayNoti({text : speech.text, speed : speech.speed, volume: speech.volume});
 						speechIntervalList.push(setInterval(() => {
-							tts.read({text : speech.text, speed : speech.speed, volume: speech.volume}).then(res => console.log(res)).catch(err => console.log(err));
+							this.playSoundAndDisplayNoti({text : speech.text, speed : speech.speed, volume: speech.volume});
 						}, speech.interval));
 					}, speech.startDelay));
 				}

@@ -7,7 +7,7 @@
     "name": "Nguyen Duc Anh"
   },
   "repository": {
-    "url": ""
+    "url": "https://github.com/Dauto98/Repeated-speech"
   },
   "scripts": {
     "start": "electron .",
