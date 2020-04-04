@@ -11,6 +11,7 @@
   },
   "scripts": {
     "start": "electron .",
+    "build": "webpack",
     "dist": "electron-builder build"
   },
   "devDependencies": {
@@ -38,16 +39,14 @@
     "simpletts": "^2.3.0"
   },
   "build": {
-    "asarUnpack" : "simpletts/",
-    "files" : [
+    "asar": true,
+    "asarUnpack": "simpletts/",
+    "files": [
       {
-        "from" : ".",
-        "to" : ".",
-        "filter" : ["build/"]
-      },
-      "!src/",
-      "!.babelrc",
-      "!webpack.config.js"
+        "from": ".",
+        "to": ".",
+        "filter": ["build/", "index.js"]
+      }
     ],
     "win": {
       "target": [

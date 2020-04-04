@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
-	watch : true,
+	// watch : true,
   mode : "development",
 	target: 'electron-renderer',
 	context : path.resolve(__dirname), // make all relative path relative to this instead of cwd
@@ -12,7 +12,7 @@ module.exports = {
     main : "./src/app.js" // chunkname : "path to start bundling this chunk"
   },
   output : {
-    filename : "[name].[chunkhash].js", // name of the outputed files
+    filename : "[name].js", // name of the outputed files
     path : path.resolve(__dirname, "build"), // where to put those files
     publicPath : "" // the address seen from the web URL, after the domain
   },

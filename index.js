@@ -7,7 +7,7 @@ let mainWindow;
 function createWindow() {
 	mainWindow = new BrowserWindow({width: 1000, height: 800});
 	mainWindow.webContents.openDevTools({mode: 'bottom'});
-	mainWindow.loadFile("build/index.html");
+	mainWindow.loadFile("./build/index.html");
 
 	mainWindow.on("closed", () => {
 		mainWindow = null

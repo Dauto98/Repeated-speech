@@ -21,7 +21,7 @@ class App extends React.Component {
 
 	componentDidMount() {
 		Notification.requestPermission().then(function(result) {
-		  console.log(result);
+		  console.log(`Notification permission ${result}`);
 		});
 	}
 
@@ -59,9 +59,9 @@ class App extends React.Component {
 			this.state.data.forEach(speech => {
 				if (speech.enabled) {
 					speechStartDelayList.push(setTimeout(() => {
-						this.playSoundAndDisplayNoti({text : speech.text, speed : speech.speed, volume: speech.volume});
+						this.playSoundAndDisplayNoti({text : speech.text, speed : speech.speed, volume: speech.volume, voice: 'english'});
 						speechIntervalList.push(setInterval(() => {
-							this.playSoundAndDisplayNoti({text : speech.text, speed : speech.speed, volume: speech.volume});
+							this.playSoundAndDisplayNoti({text : speech.text, speed : speech.speed, volume: speech.volume, voice: 'english'});
 						}, speech.interval));
 					}, speech.startDelay));
 				}
